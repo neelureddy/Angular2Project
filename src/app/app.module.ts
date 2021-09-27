@@ -1,3 +1,4 @@
+import { PanelComponent } from './panel/panel.component';
 import { SummaryPipe } from './summary.pipe';
 import { CoursesService } from './courses.service';
 import { NgModule, Component } from '@angular/core';
@@ -13,7 +14,8 @@ import { CoursesComponent } from './courses.component';
   declarations: [
     AppComponent,
     CoursesComponent,
-    SummaryPipe
+    SummaryPipe,
+    PanelComponent
     
   ],
   imports: [
