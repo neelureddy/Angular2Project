@@ -5,6 +5,59 @@
      <p>Some content here...</p>
   </div>
 </bootstrap-panel>
+
+<div [hidden]= "courses.length == 0">
+    List of courses
+</div>
+<div [hidden]= "courses.length >1">
+    No courses yet
+</div>
+    
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode== 'map'"><a (click)="viewMode='map'">Map view</a></li>
+  <li [class.active]="viewMode== 'list'"><a (click)="viewMode='list'">List view</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map view Content</div>
+  <div *ngSwitchCase="'list'">List view Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<ul>
+  <li *ngFor="let course of courses; ,even as isEven">
+  {{course.name }} <span *ngIf = "isEven">(EVEN)</span>
+  <button (click) = "onChange(course)">Remove</button>
+
+  </li>
+</ul>
+
+<button (click)="onAdd()">
+    Add
+</button> <br/> <br/>
+
+<button (click)= "loadCourses()"> Load Courses</button>
+<ul>
+  <li *ngFor= "let course of courses; trackBy: trackCourse">
+    {{course.name}}
+  </li>
+</ul>
+
+<button
+
+  [ngStyle]= "{
+    'backgroundColor': canSave ? 'blue' : 'grey',
+    'color' : canSave ? 'white' : 'black',
+    'fontweight' : canSave ? 'bold' : 'normal'
+     
+  }"
+>
+Save
+</button> <br/> <br/>
+
+<span>{{task.assignee?.name}}</span>
+
+<input type="text" [appInputFormat]= "'uppercase'">
+
 <div *ngIf= "courses.length > 0; then coursesList else noCourses"></div>
   <ng-template #coursesList>
     List of courses
