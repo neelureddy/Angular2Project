@@ -5,6 +5,7 @@
      <p>Some content here...</p>
   </div>
 </bootstrap-panel>
+
 <div [hidden]= "courses.length == 0">
     List of courses
 </div>
@@ -56,3 +57,10 @@ Save
 <span>{{task.assignee?.name}}</span>
 
 <input type="text" [appInputFormat]= "'uppercase'">
+
+<div *ngIf= "courses.length > 0; then coursesList else noCourses"></div>
+  <ng-template #coursesList>
+    List of courses
+  </ng-template>
+  <ng-template #noCourses>
+    No courses yet

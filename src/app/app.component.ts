@@ -43,4 +43,5 @@ export class AppComponent {
       name: 'John Smith'
     }
   }
+  courses= [];
 }
