@@ -34,4 +34,13 @@ export class AppComponent {
   trackCourse(_index: any, course: { id: any; }){
       return course ? course.id : undefined;
   }
-}
+
+  canSave =true;
+
+  task= {
+    title: 'Review Applications',
+    assignee: {
+      name: 'John Smith'
+    }
+  }
+  courses= [];
