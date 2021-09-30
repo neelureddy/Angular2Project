@@ -18,7 +18,6 @@ import { InputFormatDirective } from './input-format.directive';
     SummaryPipe,
     PanelComponent,
     InputFormatDirective,
-    PanelComponent
   ],
   imports: [
     BrowserModule,
