@@ -1,9 +1,10 @@
+import { SignupFormComponent } from './signup-form/signup-form.component';
 import { PanelComponent } from './panel/panel.component';
 import { SummaryPipe } from './summary.pipe';
 import { CoursesService } from './courses.service';
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,13 +16,15 @@ import { CoursesComponent } from './courses.component';
     AppComponent,
     CoursesComponent,
     SummaryPipe,
-    PanelComponent
+    PanelComponent,
+    SignupFormComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
