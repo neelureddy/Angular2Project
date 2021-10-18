@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CoursesComponent } from './courses.component';
     CoursesComponent,
     SummaryPipe,
     PanelComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    NewCourseFormComponent
     
   ],
   imports: [
